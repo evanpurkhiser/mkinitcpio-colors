@@ -1,0 +1,12 @@
+#!/usr/bin/ash
+
+run_hook() {
+    if [ -e /consolecolors ]
+    then
+        setcolors -c /dev/console /consolecolors
+    else
+        msg "No consolecolors found despite added hook."
+    fi
+}
+
+# vim: set ft=sh ts=4 sw=4 et:
