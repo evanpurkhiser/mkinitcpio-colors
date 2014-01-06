@@ -19,6 +19,7 @@ specify the colors in the format `COLOR_X=hexcode`. Where X is a number between
 COLOR_0=ff0000
 COLOR_1=00ff00
 ...
+COLOR_15=0000ff
 ```
 
 You will need to run `mkinitcpio -p linux` each time you make changes to your
