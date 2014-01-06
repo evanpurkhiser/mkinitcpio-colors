@@ -13,15 +13,16 @@ to abruptly change.
 
 To define colors you will want to edit your `/etc/vconsole.conf` file and
 specify the colors in the format `COLOR_X=hexcode`. Where X is a number between
-0 and 15.
-
-For example:
+0 and 15. For example:
 
 ````sh
 COLOR_0=ff0000
 COLOR_1=00ff00
 ...
 ```
+
+You will need to run `mkinitcpio -p linux` each time you make changes to your
+color configuration.
 
 ### Converting from `setcolors` format
 
