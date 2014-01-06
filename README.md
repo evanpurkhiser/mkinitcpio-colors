@@ -12,7 +12,7 @@ will probably want to place the hook fairly eairly if you don't want the colors
 to abruptly change.
 
 To define colors you will want to edit your `/etc/vconsole.conf` file and
-specify the colors in the format `XOLOR_X=hexcode`. Where X is a number between
+specify the colors in the format `COLOR_X=hexcode`. Where X is a number between
 0 and 15.
 
 For example:
