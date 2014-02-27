@@ -1,6 +1,6 @@
 #!/usr/bin/ash
 
-run_hook() {
+run_earlyhook() {
     if [ -e /consolecolors ]
     then
         setcolors -c /dev/console /consolecolors
