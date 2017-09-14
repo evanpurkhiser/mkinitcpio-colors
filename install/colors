@@ -4,6 +4,8 @@ build() {
     (
         [[ -s /etc/vconsole.conf ]] && . /etc/vconsole.conf
         
+        COLORS=""
+        
         for COLOR_ID in $(seq 0 15)
         do
             COLOR=$(eval "echo \$COLOR_${COLOR_ID}")
