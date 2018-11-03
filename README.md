@@ -15,7 +15,7 @@ To define colors you will want to edit your `/etc/vconsole.conf` file and
 specify the colors in the format `COLOR_X=hexcode`. Where X is a number between
 0 and 15. For example:
 
-````sh
+```sh
 COLOR_0=ff0000
 COLOR_1=00ff00
 ...
@@ -31,6 +31,6 @@ You may use this sed command to convert from a [setcolors color configuration
 file](https://github.com/EvanPurkhiser/linux-vt-setcolors/blob/master/example-colors/solarized)
 to the required format for the `/etc/vconsole.conf` file.
 
-````sh
+```sh
 $ sed 's/^\(.*\)#\(.\{6\}\).*$/COLOR_\1=\2/'
 ```
