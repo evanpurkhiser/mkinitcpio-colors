@@ -11,6 +11,12 @@ First add the `colors` hook to your `/etc/mkinitcpio.conf` files HOOKS list. You
 will probably want to place the hook fairly eairly if you don't want the colors
 to abruptly change.
 
+If you're using `systemd` based `initramfs`, you have to use the `sd-colors` hook and place it after the `systemd` hook, as well as enable the corresponding `setcolors.service` `systemd` service
+
+```
+# systemctl enable setcolors.service
+```
+
 To define colors you will want to edit your `/etc/vconsole.conf` file and
 specify the colors in the format `COLOR_X=hexcode`. Where X is a number between
 0 and 15. For example:
