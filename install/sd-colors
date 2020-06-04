@@ -1,0 +1,37 @@
+#!/bin/bash
+build() {
+    # subshell to avoid namespace pollution
+    (
+        [[ -s /etc/vconsole.conf ]] && . /etc/vconsole.conf
+
+        COLORS=""
+
+        for COLOR_ID in $(seq 0 15)
+        do
+            COLOR=$(eval "echo \$COLOR_${COLOR_ID}")
+
+            if [[ ! "$COLOR" ]]
+            then
+                warning "colors: Not all colors specified in configuration"
+                exit 1
+            fi
+
+            COLORS="${COLORS}${COLOR_ID}#${COLOR}\n"
+        done
+
+        echo -ne "$COLORS" > "$BUILDROOT/consolecolors"
+        exit 0
+    )
+
+    add_binary "/usr/bin/setcolors"
+
+    add_systemd_unit "setcolors.service"
+}
+
+help() {
+    cat <<HELPEOF
+This hook will setup the console colors during early user space.
+HELPEOF
+}
+
+# vim: set ft=sh ts=4 sw=4 et:

@@ -7,9 +7,39 @@ Requires the [setcolors](https://github.com/EvanPurkhiser/linux-vt-setcolors) ut
 
 ### Usage
 
-First add the `colors` hook to your `/etc/mkinitcpio.conf` files HOOKS list. You
+If you have successfully installed this package, either by using the corresponding `AUR` repository, or by
+* copying the contents of the `install` directory to `/usr/lib/initcpio/install`
+* copying the contents of the `hooks` directory to `/usr/lib/initcpio/hooks`
+* copying the `setcolors.service` file to `/usr/lib/systemd/system`
+you can proceed to actually use the `mkinitcpio` hook
+
+First you have to determine, wether you're using a `busybox` or `systemd` based `initramfs`, though.
+
+#### How to tell
+
+The default one is `busybox` for all Arch Linux installations done from an official `archiso`. So at the time of writing, you should know that you're using a `systemd` based `initramfs`, as you would have to actively edit `/etc/mkinitcpio.conf`.
+
+Generally speaking and with no guarantee regarding exceptional cases, if you have the `udev` hook present in your `HOOKS` list in `/etc/mkinitcpio.conf`, you're using a `busybox` based initramfs, if you have the `systemd` hook present, you're using a `systemd` one.
+
+#### `busybox`
+
+Add the `colors` hook to your `/etc/mkinitcpio.conf` `HOOKS` list. You
 will probably want to place the hook fairly eairly if you don't want the colors
 to abruptly change.
+
+#### `systemd
+
+Add the `colors` hook to your `/etc/mkinitcpio.conf` `HOOKS` list. You
+will probably want to place the hook fairly eairly if you don't want the colors
+to abruptly change, but you will definitely want to place it after the `systemd` hook.
+
+You will then need to enable the `setcolors.service` `systemd` service
+
+```
+# systemctl enable setcolors.service
+```
+
+#### In any case
 
 To define colors you will want to edit your `/etc/vconsole.conf` file and
 specify the colors in the format `COLOR_X=hexcode`. Where X is a number between
