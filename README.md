@@ -29,7 +29,7 @@ to abruptly change.
 
 #### `systemd
 
-Add the `colors` hook to your `/etc/mkinitcpio.conf` `HOOKS` list. You
+Add the `sd-colors` hook to your `/etc/mkinitcpio.conf` `HOOKS` list. You
 will probably want to place the hook fairly eairly if you don't want the colors
 to abruptly change, but you will definitely want to place it after the `systemd` hook.
 
