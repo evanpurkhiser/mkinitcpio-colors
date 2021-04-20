@@ -6,6 +6,3 @@ ConditionPathExists=/consolecolors
 [Service]
 Type=oneshot
 ExecStart=setcolors -c /dev/console /consolecolors
-
-[Install]
-WantedBy=sysinit.target
