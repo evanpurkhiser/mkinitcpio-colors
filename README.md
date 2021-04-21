@@ -27,7 +27,7 @@ Add the `colors` hook to your `/etc/mkinitcpio.conf` `HOOKS` list. You
 will probably want to place the hook fairly eairly if you don't want the colors
 to abruptly change.
 
-#### `systemd
+#### `systemd`
 
 Add the `sd-colors` hook to your `/etc/mkinitcpio.conf` `HOOKS` list. You
 will probably want to place the hook fairly eairly if you don't want the colors
