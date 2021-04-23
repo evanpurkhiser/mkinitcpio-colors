@@ -7,10 +7,10 @@ Depends on [linux-vt-setcolors](https://github.com/EvanPurkhiser/linux-vt-setcol
 
 ### Usage
 
-Install this by either using the [AUR](https://aur.archlinux.org/packages/setcolors-git) or by:
-* copying the contents of `install/` to `/etc/initcpio/install/`
-* copying the contents of `hooks/` to `/etc/initcpio/hooks/`
-* copying `setcolors.service` to `/etc/systemd/system/`
+Install this by either using the [AUR](https://aur.archlinux.org/packages/setcolors-git) or by copying:
+* `install/*` to `/etc/initcpio/install/`
+* `hooks/*` to `/etc/initcpio/hooks/`
+* `setcolors.service` to `/etc/systemd/system/`
 
 Then, add to `HOOKS` in `/etc/mkinitcpio.conf` either `colors` or `sd-colors`
 after `udev` or `systemd` respectively.
