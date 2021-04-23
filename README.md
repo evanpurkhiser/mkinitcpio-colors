@@ -15,7 +15,7 @@ Install this by either using the [AUR](https://aur.archlinux.org/packages/setcol
 Then, add to `HOOKS` in `/etc/mkinitcpio.conf` either `colors` or `sd-colors`
 after `udev` or `systemd` respectively.
 
-#### Configuration
+### Configuration
 
 Define colors in `/etc/vconsole.conf` with the format `COLOR_X=hexcode`, being
 X a number between 0 and 15, like:
