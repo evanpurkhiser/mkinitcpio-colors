@@ -3,7 +3,7 @@
 Archlinux [mkinitcpio](https://wiki.archlinux.org/index.php/mkinitcpio) hook to
 set the `Virtual Console` colors during early userspace.
 
-Depends on [linux-vt-setcolors](https://github.com/EvanPurkhiser/linux-vt-setcolors).
+Depends on [linux-vt-setcolors](https://github.com/evanpurkhiser/linux-vt-setcolors).
 
 ### Usage
 
@@ -32,7 +32,7 @@ Regenerate the `initramfs` to apply the changes.
 
 ### Converting
 
-The following sed command can be used to convert from a [setcolors configuration](https://github.com/EvanPurkhiser/linux-vt-setcolors/blob/main/example-colors/solarized)
+The following sed command can be used to convert from a [setcolors configuration](https://github.com/evanpurkhiser/linux-vt-setcolors/blob/main/example-colors/solarized)
 to the `/etc/vconsole.conf` format.
 
 ```sh
