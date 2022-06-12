@@ -8,9 +8,10 @@ Depends on [linux-vt-setcolors](https://github.com/EvanPurkhiser/linux-vt-setcol
 ### Usage
 
 Install this by either using the [AUR](https://aur.archlinux.org/packages/setcolors-git) or by copying:
-* `install/*` to `/etc/initcpio/install/`
-* `hooks/*` to `/etc/initcpio/hooks/`
-* `setcolors.service` to `/etc/systemd/system/`
+
+- `install/*` to `/etc/initcpio/install/`
+- `hooks/*` to `/etc/initcpio/hooks/`
+- `setcolors.service` to `/etc/systemd/system/`
 
 Then, add to `HOOKS` in `/etc/mkinitcpio.conf` either `colors` or `sd-colors`
 after `udev` or `systemd` respectively.
@@ -31,7 +32,7 @@ Regenerate the `initramfs` to apply the changes.
 
 ### Converting
 
-The following sed command can be used to convert from a [setcolors configuration](https://github.com/EvanPurkhiser/linux-vt-setcolors/blob/master/example-colors/solarized)
+The following sed command can be used to convert from a [setcolors configuration](https://github.com/EvanPurkhiser/linux-vt-setcolors/blob/main/example-colors/solarized)
 to the `/etc/vconsole.conf` format.
 
 ```sh
