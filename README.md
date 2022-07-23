@@ -7,7 +7,7 @@ Depends on [linux-vt-setcolors](https://github.com/evanpurkhiser/linux-vt-setcol
 
 ### Usage
 
-Install this by either using the [AUR](https://aur.archlinux.org/packages/setcolors-git) or by copying:
+Install this by either using the [AUR](https://aur.archlinux.org/packages/mkinitcpio-colors-git) or by copying:
 
 - `install/*` to `/etc/initcpio/install/`
 - `hooks/*` to `/etc/initcpio/hooks/`
