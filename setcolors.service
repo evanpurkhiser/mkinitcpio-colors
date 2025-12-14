@@ -1,8 +1,42 @@
 [Unit]
 Description=Setup the console colors
-DefaultDependencies=no
+
 ConditionPathExists=/consolecolors
+ConditionPathExists=/dev/tty0
+
+DefaultDependencies=no
+Before=basic.target
 
 [Service]
 Type=oneshot
-ExecStart=setcolors -c /dev/console /consolecolors
+
+ExecStart=/usr/bin/setcolors -c /dev/tty0 /consolecolors
+
+LockPersonality=true
+MemoryDenyWriteExecute=true
+NoNewPrivileges=true
+ProcSubset=pid
+RestrictRealtime=true
+RestrictSUIDSGID=true
+SystemCallArchitectures=native
+
+DeviceAllow=/dev/tty0
+DevicePolicy=closed
+
+PrivateIPC=true
+PrivateMounts=true
+PrivateNetwork=true
+PrivateTmp=true
+
+ProtectClock=true
+ProtectControlGroups=true
+ProtectHome=tmpfs
+ProtectHostname=true
+ProtectKernelLogs=true
+ProtectKernelModules=true
+ProtectKernelTunables=true
+ProtectProc=invisible
+ProtectSystem=strict
+
+#[Install] # guide
+#WantedBy=initrd.target

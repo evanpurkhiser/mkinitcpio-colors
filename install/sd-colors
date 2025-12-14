@@ -27,7 +27,7 @@ build() {
 
     add_systemd_unit "setcolors.service"
 
-    add_symlink "/usr/lib/systemd/system/initrd.target.wants/setcolors.service" "setcolors.service"
+    add_symlink "/usr/lib/systemd/system/initrd.target.wants/setcolors.service" "/usr/lib/systemd/system/setcolors.service"
 }
 
 help() {
