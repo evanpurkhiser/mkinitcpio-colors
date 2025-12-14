@@ -11,7 +11,7 @@ Install this by either using the [AUR](https://aur.archlinux.org/packages/mkinit
 
 - `install/*` to `/etc/initcpio/install/`
 - `hooks/*` to `/etc/initcpio/hooks/`
-- `setcolors.service` to `/etc/systemd/system/`
+- `setcolors.service` to `/usr/lib/systemd/system/` (mkinitcpio will not get the service from `/etc/systemd/system`)
 
 Then, add to `HOOKS` in `/etc/mkinitcpio.conf` either `colors` or `sd-colors`
 after `udev` or `systemd` respectively.
